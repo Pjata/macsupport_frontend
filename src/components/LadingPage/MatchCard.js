@@ -6,13 +6,12 @@ import CardActionArea from "@material-ui/core/CardActionArea"
 import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import CardMedia from "@material-ui/core/CardMedia"
-import Button from "@material-ui/core/Button"
 import IconButton from "@material-ui/core/IconButton"
 import Typography from "@material-ui/core/Typography"
 import image0 from "../../image0.jpg"
-import { SocialIcon } from "react-social-icons"
-import Point from "@material-ui/icons/PinDrop"
-
+import FacebookIcon from "mdi-material-ui/Facebook"
+import Instagram from "mdi-material-ui/Instagram"
+import GoogleMaps from "mdi-material-ui/GoogleMaps"
 const styles = {
   card: {
     maxWidth: 445
@@ -28,6 +27,12 @@ const onMapClick = ev => {
     "https://www.google.com/maps/dir/?api=1&destination=t%C3%BCskecsarnok",
     "_blank"
   )
+}
+const onFbClick = ev => {
+  window.open("https://www.facebook.com/MACBudapestfelnott", "_blank")
+}
+const onInstaClick = ev => {
+  window.open("https://www.instagram.com/macujbudafelnott/", "_blank")
 }
 function ImgMediaCard(props) {
   const { classes, matchTag, date } = props
@@ -62,11 +67,14 @@ function ImgMediaCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <IconButton>
-          <SocialIcon url={"https://www.facebook.com/MACBudapestfelnott"} />
+        <IconButton onClick={onFbClick}>
+          <FacebookIcon nativeColor={"#3B5998"} />
+        </IconButton>
+        <IconButton onClick={onInstaClick}>
+          <Instagram nativeColor={"#bc2a8d"} />
         </IconButton>
         <IconButton onClick={onMapClick}>
-          <Point />
+          <GoogleMaps nativeColor={"#2BA76C"} />
         </IconButton>
       </CardActions>
     </Card>
