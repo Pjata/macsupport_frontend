@@ -1,11 +1,10 @@
 import React, { Component } from "react"
-import logo from "./logo.svg"
 import "./App.css"
 import LandingPage from "./components/LadingPage/LandingPage"
-import BackgroundSlideshow from "react-background-slideshow"
-import image0 from "./image0.jpg"
-import image1 from "./image1.jpg"
-import image2 from "./image2.jpg"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import Callback from "./auth/Callback"
+import Refering from "./components/Refering"
+import Refered from "./components/Refered"
 class App extends Component {
   style = {
     display: "flex",
@@ -15,17 +14,25 @@ class App extends Component {
     width: "100%"
   }
   render() {
+    console.log(this.props)
     return (
-      <div
-        style={{
-          height: "100%",
-          width: "100%"
-        }}
-      >
-        <div style={this.style}>
-          <LandingPage />
+      <Router>
+        <div
+          style={{
+            height: "100%",
+            width: "100%"
+          }}
+        >
+          <div style={this.style}>
+            <Switch>
+              <Route exact path={"/callback"} component={Callback} />
+              <Route exact path={"/refering"} component={Refering} />
+              <Route exact path={"/:referer"} component={Refered} />
+              <Route exact path={"/"} component={LandingPage} />
+            </Switch>
+          </div>
         </div>
-      </div>
+      </Router>
     )
   }
 }

@@ -12,6 +12,8 @@ import image0 from "../../image0.jpg"
 import FacebookIcon from "mdi-material-ui/Facebook"
 import Instagram from "mdi-material-ui/Instagram"
 import GoogleMaps from "mdi-material-ui/GoogleMaps"
+import Home from "@material-ui/icons/Home"
+import auth0 from "../../auth/Auth"
 const styles = {
   card: {
     maxWidth: 445
@@ -34,8 +36,12 @@ const onFbClick = ev => {
 const onInstaClick = ev => {
   window.open("https://www.instagram.com/macujbudafelnott/", "_blank")
 }
+const onHomeClick = ev => {
+  window.open("http://macbudapesthockey.hu/")
+}
 function ImgMediaCard(props) {
   const { classes, matchTag, date } = props
+  console.log(auth0.getProfile())
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -75,6 +81,9 @@ function ImgMediaCard(props) {
         </IconButton>
         <IconButton onClick={onMapClick}>
           <GoogleMaps nativeColor={"#2BA76C"} />
+        </IconButton>
+        <IconButton onClick={onHomeClick}>
+          <Home nativeColor={"#000422"} />
         </IconButton>
       </CardActions>
     </Card>
