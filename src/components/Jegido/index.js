@@ -3,6 +3,9 @@ import BarCharts from "./BarCharts"
 import Controls, { playerNames } from "./Controls"
 
 class App extends Component {
+  componentDidMount() {
+    document.title = "MAC Újbuda jégidő"
+  }
   state = {
     names: playerNames
   }
