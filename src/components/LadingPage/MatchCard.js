@@ -50,12 +50,6 @@ function ImgMediaCard(props) {
     <div className={classes.card}>
       <Card>
         <CardActionArea>
-          <CardMedia
-            component="img"
-            className={classes.media}
-            height="190"
-            image={image0}
-          />
           <CardContent>
             <Typography
               gutterBottom
