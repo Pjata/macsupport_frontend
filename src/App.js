@@ -27,9 +27,6 @@ class App extends Component {
           <div style={this.style}>
             <Switch>
               <Route exact path={"/jegido"} component={Jegido} />
-              <Route exact path={"/callback"} component={Callback} />
-              <Route exact path={"/refering"} component={Refering} />
-              <Route exact path={"/:referer"} component={Refered} />
               <Route exact path={"/"} component={LandingPage} />
             </Switch>
           </div>
