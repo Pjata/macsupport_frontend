@@ -113,7 +113,7 @@ class Controls extends PureComponent {
           style={{
             display: "grid",
             width: "700px",
-            gridTemplateColumns: "repeat(auto-fill,minmax(80px,1fr))",
+            gridTemplateColumns: "repeat(auto-fit,minmax(50px,1fr))",
             gridGap: "5px"
           }}
         >

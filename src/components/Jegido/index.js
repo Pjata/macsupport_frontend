@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import BarCharts from "./BarCharts"
 import Controls, { playerNames } from "./Controls"
+import { BrowserView, MobileView } from "react-device-detect"
 
 class App extends Component {
   componentDidMount() {

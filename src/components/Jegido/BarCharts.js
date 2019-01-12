@@ -9,8 +9,11 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer
+  ResponsiveContainer,
+  Symbols,
+  Surface
 } from "recharts"
+import { MobileView, BrowserView } from "react-device-detect"
 
 import data2 from "./data"
 /*const playerNames = ["DUDÁS, Jesse Ray","BURT, Cameron","MACAULAY, Scott","BODÓ, Chris","LANGKOW, Chris","BROWN, Jared","ORBAN, Brance","POZSGAI, Tamás","KLEMPA, Tomáš","NAGY, Krisztián","DANSEREAU, Keegan","TERBÓCS, István","VOKLA, Roland","GARÁT, Zsombor","ODNOGA, Mátyás","SZABAD, Kevin","SZIGETI, Ákos","KREISZ, Brúnó","FEJES, Nándor","PÁPA, Márton","BUGÁR, Gábor","BUKOR, Raymond","MAJOROSS, Barnabás","RAJNA, Miklós","BÁLIZS, Bence","NEGRIN, John","KEDVES, Richárd","CSOLLÁK, Márkó"]*/
@@ -96,6 +99,7 @@ const colors = [
   "#CC3299",
   "#99CC32"
 ]
+const SIZE = 32
 //const colors =['#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080',  '#000000']
 const getCharts = names => {
   return names.map((name, index) => (
@@ -109,46 +113,87 @@ const getCharts = names => {
     />
   ))
 }
+const viewBox = { x: 0, y: 0, width: SIZE, height: SIZE }
+const svgStyle = {
+  display: "inline-block",
+  verticalAlign: "middle",
+  marginRight: 4
+}
+
+const getLegend = names => {
+  const nameElems = names.map((name, index) => (
+    <div key={index}>
+      <Surface width={14} height={14} viewBox={viewBox} style={svgStyle}>
+        <Symbols
+          fill={colorsPretty[index % 20]}
+          cx={16}
+          cy={16}
+          size={SIZE}
+          type={"square"}
+          sizeType="diameter"
+        />
+      </Surface>
+      {name}
+    </div>
+  ))
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit,minmax(190px,1fr))"
+      }}
+    >
+      {nameElems}
+    </div>
+  )
+}
 
 const SimpleLineChart = props => {
   const lines = getCharts(props.names)
   return (
-    <ResponsiveContainer width={"100%"} height={"100%"}>
-      <BarChart
-        data={data2}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-      >
-        <XAxis dataKey="name" />
-        <YAxis
-          tickFormatter={value => {
-            const hours = Math.floor(value / (60.0 * 60.0))
-            const minutes = Math.floor((value - hours * 60 * 60) / 60.0)
-            const seconds = value % 60
-            const minutesString = minutes < 10 ? `0${minutes}` : minutes
-            const secondsString = seconds < 10 ? `0${seconds}` : seconds
-            return `${hours}:${minutesString}:${secondsString}`
-          }}
-        />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip
-          isAnimationActive={false}
-          contentStyle={{
-            backgroundColor: "#030722",
-            color: "white"
-          }}
-          formatter={(value, name, props) => {
-            const hours = Math.floor(value / (60.0 * 60.0))
-            const minutes = Math.floor((value - hours * 60 * 60) / 60.0)
-            const seconds = value % 60
-            const minutesString = minutes < 10 ? `0${minutes}` : minutes
-            const secondsString = seconds < 10 ? `0${seconds}` : seconds
-            return `${hours}:${minutesString}:${secondsString}`
-          }}
-        />
-        <Legend />
-        {lines}
-      </BarChart>
-    </ResponsiveContainer>
+    <div
+      style={{
+        height: "100%",
+        width: " 100%"
+      }}
+    >
+      <ResponsiveContainer width={"100%"} height={"100%"}>
+        <BarChart
+          data={data2}
+          margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        >
+          <XAxis dataKey="name" />
+          <YAxis
+            tickFormatter={value => {
+              const hours = Math.floor(value / (60.0 * 60.0))
+              const minutes = Math.floor((value - hours * 60 * 60) / 60.0)
+              const seconds = value % 60
+              const minutesString = minutes < 10 ? `0${minutes}` : minutes
+              const secondsString = seconds < 10 ? `0${seconds}` : seconds
+              return `${hours}:${minutesString}:${secondsString}`
+            }}
+          />
+          <CartesianGrid strokeDasharray="3 3" />
+          <Tooltip
+            isAnimationActive={false}
+            contentStyle={{
+              backgroundColor: "#030722",
+              color: "white"
+            }}
+            formatter={(value, name, props) => {
+              const hours = Math.floor(value / (60.0 * 60.0))
+              const minutes = Math.floor((value - hours * 60 * 60) / 60.0)
+              const seconds = value % 60
+              const minutesString = minutes < 10 ? `0${minutes}` : minutes
+              const secondsString = seconds < 10 ? `0${seconds}` : seconds
+              return `${hours}:${minutesString}:${secondsString}`
+            }}
+          />
+          {lines}
+        </BarChart>
+      </ResponsiveContainer>
+      <div>{getLegend(props.names)}</div>
+    </div>
   )
 }
 
