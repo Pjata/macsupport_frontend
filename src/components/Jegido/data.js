@@ -372,7 +372,7 @@ export const data2 = [
     "CSOLLÁK, Márkó": 0
   },
   {
-    name: "13. 2018-10-12 Miskovec OW",
+    name: "13. 2018-10-12 Miskolc OW",
     "DUDÁS, Jesse Ray": 1517,
     "BURT, Cameron": 1165,
     "MACAULAY, Scott": 1322,
@@ -651,7 +651,7 @@ export const data2 = [
     "CSOLLÁK, Márkó": 0
   },
   {
-    name: "23. 2018-11-16 Miskovec W",
+    name: "23. 2018-11-16 Miskolc W",
     "DUDÁS, Jesse Ray": 1758,
     "BURT, Cameron": 1670,
     "MACAULAY, Scott": 0,
@@ -961,7 +961,7 @@ export const data2 = [
     "CSOLLÁK, Márkó": 0
   },
   {
-    name: "35. 2018-12-21 Miskovec L",
+    name: "35. 2018-12-21 Miskolc L",
     "DUDÁS, Jesse Ray": 1034,
     "BURT, Cameron": 1366,
     "MACAULAY, Scott": 1153,
