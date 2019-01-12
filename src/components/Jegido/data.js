@@ -1207,6 +1207,37 @@ export const data2 = [
     "NEGRIN, John": 1440,
     "KEDVES, Richárd": 0,
     "CSOLLÁK, Márkó": 0
+  },
+  {
+    name: "43. 2019-01-11 Kosice SW",
+    "DUDÁS, Jesse Ray": 1588,
+    "BURT, Cameron": 908,
+    "MACAULAY, Scott": 1108,
+    "BODÓ, Chris": 1268,
+    "LANGKOW, Chris": 1355,
+    "BROWN, Jared": 1249,
+    "ORBAN, Brance": 1185,
+    "POZSGAI, Tamás": 1058,
+    "KLEMPA, Tomáš": 1147,
+    "NAGY, Krisztián": 1080,
+    "DANSEREAU, Keegan": 1047,
+    "TERBÓCS, István": 929,
+    "VOKLA, Roland": 300,
+    "GARÁT, Zsombor": 751,
+    "ODNOGA, Mátyás": 332,
+    "SZABAD, Kevin": 259,
+    "SZIGETI, Ákos": 301,
+    "KREISZ, Brúnó": 0,
+    "FEJES, Nándor": 0,
+    "PÁPA, Márton": 307,
+    "BUGÁR, Gábor": 0,
+    "BUKOR, Raymond": 0,
+    "MAJOROSS, Barnabás": 761,
+    "RAJNA, Miklós": 0,
+    "BÁLIZS, Bence": 0,
+    "NEGRIN, John": 1546,
+    "KEDVES, Richárd": 0,
+    "CSOLLÁK, Márkó": 0
   }
 ]
 export default data2
