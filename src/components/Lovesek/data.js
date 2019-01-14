@@ -1,0 +1,25 @@
+export const data = [
+  { name: "BROWN, Jared", top: "48%", left: "14%" },
+  { name: "VOKLA, Roland", top: "85%", left: "34%" },
+  { name: "PÁPA, Márton", top: "48%", left: "17%" },
+  { name: "BROWN, Jared", top: "86%", left: "76%" },
+  { name: "ORBAN, Brance", top: "86%", left: "78%" },
+  { name: "SZIGETI, Ákos", top: "55%", left: "79%" },
+  { name: "BROWN, Jared", top: "57%", left: "84%" },
+  { name: "NAGY, Krisztián", top: "49%", left: "83%" },
+  { name: "DANSEREAU, Keegan", top: "54%", left: "80%" },
+  { name: "BODÓ, Chris", top: "56%", left: "86%" },
+  { name: "BROWN, Jared", top: "31%", left: "83%" },
+  { name: "DUDÁS, Jesse Ray", top: "21%", left: "78%" },
+  { name: "ORBAN, Brance", top: "48%", left: "73%" },
+  { name: "NAGY, Krisztián", top: "79%", left: "22%" },
+  { name: "MACAULAY, Scott", top: "27%", left: "13%" },
+  { name: "KLEMPA, Tomáš", top: "69%", left: "23%" },
+  { name: "BODÓ, Chris", top: "56%", left: "14%" },
+  { name: "LANGKOW, Chris", top: "38%", left: "13%" },
+  { name: "DUDÁS, Jesse Ray", top: "17%", left: "20%" },
+  { name: "NAGY, Krisztián", top: "19%", left: "14%" },
+  { name: "LANGKOW, Chris", top: "37%", left: "84%" },
+  { name: "BROWN, Jared", top: "54%", left: "21%" }
+]
+export default data
