@@ -81,6 +81,7 @@ class Lovesek extends PureComponent {
             options={options}
             isMulti
             value={names}
+            isSearchable={false}
             placeholder={"Játékos szűrő"}
             onChange={this.onNameChange}
           />
@@ -104,7 +105,9 @@ class Lovesek extends PureComponent {
             justifyContent: "center"
           }}
         >
-          <div style={{ position: "relative", width: "50%" }}>
+          <div
+            style={{ position: "relative", minWidth: "60%", maxWidth: "600px" }}
+          >
             {shoots}
             <img
               style={{
